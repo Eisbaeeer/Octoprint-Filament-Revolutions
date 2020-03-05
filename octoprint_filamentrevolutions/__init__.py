@@ -91,14 +91,14 @@ class FilamentSensorsRevolutions(octoprint.plugin.StartupPlugin,
             if self.runout_sensor_enabled():
                 self._logger.info(
                     "Filament Runout Sensor active on GPIO Pin [%s]" % self.runout_pin)
-                GPIO.setup(self.runout_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+                GPIO.setup(self.runout_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
             else:
                 self._logger.info("Runout Sensor Pin not configured")
 
             if self.jam_sensor_enabled():
                 self._logger.info(
                     "Filament Jam Sensor active on GPIO Pin [%s]" % self.jam_pin)
-                GPIO.setup(self.jam_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+                GPIO.setup(self.jam_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
             else:
                 self._logger.info("Jam Sensor Pin not configured")
 
